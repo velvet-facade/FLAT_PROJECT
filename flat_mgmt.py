@@ -3,7 +3,8 @@ from PIL import Image
 from mysql.connector import *
 from string import *
 mydb = connect(host='localhost', user='root',
-               passwd='1234', database='CsProject')
+               passwd='1234', database='flat')
+
 cursor = mydb.cursor()
 communityNameFinal = ''
 monthLst = ['January', 'February', 'March', 'April', 'May', 'June',
@@ -199,6 +200,7 @@ def expensesDetails():
 
 
 def hOwnName():
+
     fl = clicked1.get()
     houseNo = clicked2.get()
     houseOwnName = hOwnNameEnt.get()
@@ -455,7 +457,8 @@ if flag2 == 0:
     clicked2.set(hlst[0])
     drop2 = OptionMenu(window3, clicked2, *hlst)
     drop2.place(x=295, y=250)
-    Button(window3, text='Click to save', font='Arial',
+
+    Button(window3, text='Click to save', font='ComicsansMS',
            width=10, command=hOwnName).place(x=400, y=350)
     Button(window3, text='Exit', font='Arial', width=10,
            command=destroyWin3).place(x=800, y=500)
